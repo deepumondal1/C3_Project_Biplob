@@ -65,4 +65,20 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void when_added_to_Items_by_itemName_should_return_the_order_value_as_expected() throws itemNotFoundException {
+        // restaurant must be added
+        // add menus in restaurant
+        // get list of item by item name
+        // calculate order value by passing item list
+
+
+        restaurant.addToItemListByName("Sweet corn soup");
+        restaurant.addToItemListByName("Vegetable lasagne");
+
+        assertEquals(388,restaurant.calculateOrderValue(restaurant.getItems()));
+
+
+    }
 }

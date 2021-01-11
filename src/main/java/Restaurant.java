@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +8,7 @@ public class Restaurant {
     public LocalTime openingTime;
     public LocalTime closingTime;
     private List<Item> menu = new ArrayList<Item>();
+    private List<Item> items = new ArrayList<Item>();
 
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         this.name = name;
@@ -64,4 +64,17 @@ public class Restaurant {
         return name;
     }
 
+
+    ////////////////////////   IMPLEMENTING ORDER VALUE /////////////////////////
+
+    public void addToItemListByName(String itemName) throws itemNotFoundException {
+
+    }
+
+    public List<Item> getItems() { return items; }
+
+    public String calculateOrderValue(List<Item> items) {
+        int sum = 0;
+        return "Your order will cost: Rs" + sum;
+    }
 }
