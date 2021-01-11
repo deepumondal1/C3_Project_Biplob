@@ -67,14 +67,24 @@ public class Restaurant {
 
     ////////////////////////   IMPLEMENTING ORDER VALUE /////////////////////////
 
+
     public void addToItemListByName(String itemName) throws itemNotFoundException {
 
+        Item itemToBeAdded = findItemByName(itemName);
+        if (itemToBeAdded == null)
+            throw new itemNotFoundException(itemName);
+
+        items.add(itemToBeAdded);
     }
 
     public List<Item> getItems() { return items; }
 
-    public String calculateOrderValue(List<Item> items) {
+    public int calculateOrderValue(List<Item> items) {
         int sum = 0;
-        return "Your order will cost: Rs" + sum;
+        for(Item item: items){
+            sum = sum + item.getPrice();
+        }
+        System.out.println("Your order will cost: Rs" + sum);
+        return sum;
     }
 }
